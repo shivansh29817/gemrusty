@@ -16,8 +16,8 @@ app.post("/generate", async function (req, res) {
   const { userInput } = req.body;
 
   try {
-    const genAI = new GoogleGenerativeAI('AIzaSyDmum1o25Shj8GQXkDVcEnYLkKbo8qhgoE');
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const genAI = new GoogleGenerativeAI('AIzaSyC-He1IcS3poR35TAgXV1DX_9TTQ6ZSrBQ');
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const result = await model.generateContent(userInput);
     const response = await result.response;
@@ -35,3 +35,4 @@ app.post("/generate", async function (req, res) {
 app.listen(3000, function () {
   console.log("Server started on port 3000");
 });
+
